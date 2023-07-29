@@ -3,9 +3,16 @@
 <div class="container">
 
 @if(Session::has('mensaje'))
+<div class="alert alert-success alert-dismissible" role="alert">
 {{ Session::get('mensaje') }}
+<button type="button" class="close" data-dismis="alert" aria-label="close">
+    <span aria-hidden="true">&times;</span>
+</button>
 
+</div>
 @endif
+
+
 
 <a href="{{ url('empleado/create') }}" class="btn btn-success" > Registrar Nuevo empleado </a>
 <br/>
@@ -62,5 +69,6 @@
     </tbody>
 
 </table>
+{!! $empleados->links() !!}
 </div>
 @endsection
